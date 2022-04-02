@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+    <div class="titlebar">
+        <div class="header">Wordle</div>
+        <div class="btn-wrapper">
+            <button title="Statistics" onclick="stats()">
+                <img src="./Assets/Stats.svg" alt="Stats">
+            </button>
+            <button title="Help" onclick="help()">
+                <img src="./Assets/Help.svg" alt="Help">
+            </button>
+            <button title="Share" onclick="share()">
+                <img src="./Assets/Share.svg" alt="Share">
+            </button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="wordle-grid"></div>
+        <div class="keyboard">
+            <div class="row">
+                <div class="key" keyCode="81">Q</div>
+                <div class="key" keyCode="87">W</div>
+                <div class="key" keyCode="69">E</div>
+                <div class="key" keyCode="82">R</div>
+                <div class="key" keyCode="84">T</div>
+                <div class="key" keyCode="89">Y</div>
+                <div class="key" keyCode="85">U</div>
+                <div class="key" keyCode="73">I</div>
+                <div class="key" keyCode="79">O</div>
+                <div class="key" keyCode="80">P</div>
+            </div>
+            <div class="row">
+                <div class="key" keyCode="65">A</div>
+                <div class="key" keyCode="83">S</div>
+                <div class="key" keyCode="68">D</div>
+                <div class="key" keyCode="70">F</div>
+                <div class="key" keyCode="71">G</div>
+                <div class="key" keyCode="72">H</div>
+                <div class="key" keyCode="74">J</div>
+                <div class="key" keyCode="75">K</div>
+                <div class="key" keyCode="76">L</div>
+            </div>
+            <div class="row">
+                <div class="large-key" keyCode="13">Enter</div>
+                <div class="key" keyCode="90">Z</div>
+                <div class="key" keyCode="88">X</div>
+                <div class="key" keyCode="67">C</div>
+                <div class="key" keyCode="86">V</div>
+                <div class="key" keyCode="66">B</div>
+                <div class="key" keyCode="78">N</div>
+                <div class="key" keyCode="77">M</div>
+                <div class="large-key" keyCode="8"><img src="./Assets/Backspace.svg" alt="Backspace"></div>
+            </div>
+        </div>
+    </div>
+
+    <dialog class="winModal">
+        <div class="header">You Win!</div>
+        <div>Word: <span id="solution"></span></div>
+        <div>Attempts: <span id="attemptCount"></span></div>
+        <button class="close-btn" onclick="closeModal()">Play Again</button>
+    </dialog>
+    <dialog class="loseModal">
+        <div class="header">Game Over!</div>
+        <div>Correct Word: <span id="solution"></span></div>
+        <button class="close-btn" onclick="closeModal()">Play Again</button>
+    </dialog>
+    <dialog class="stats">
+        <div class="header">Statistics</div>
+        <svg id="statsPiechart" width="305" height="305">
+            <path fill="green" stroke="gray" stroke-width=5 class="highlightable">
+                <title>Wins</title>
+            </path>
+            <path fill="red" stroke="gray" stroke-width=5 class="highlightable">
+                <title>Loses</title>
+            </path>
+            <circle cx="50%" cy="50%" r="50%" fill="red" style="display: none;"></circle>
+        </svg>
+        <button class="close" onclick="closeModal('.stats')"><img src="./Assets/Close.svg" alt="Close"></button>
+    </dialog>
+
+    <div class="popup popup-animation" style="display: none;"></div>
+
+    <script src="./wordData.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
