@@ -1,0 +1,15 @@
+{
+    "background_color": "darkgray",
+    "descripton": "A popular game called Wordle",
+    "display": "fullscreen",
+    "icons": [
+        {
+            "src": "./Assets/Icon.png",
+            "sizes": "300x300",
+            "type": "image/png"
+        }
+    ],
+    "name":"Wordle",
+    "short_name":"Wordle",
+    "start_url":"index.html"
+}
