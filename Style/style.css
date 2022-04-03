@@ -7,7 +7,8 @@
     --clr-dark-0: #333;
     --clr-dark-1: #222;
     --clr-light: #DDD;
-    --clr-light-transparent: #DDD4;
+    --clr-light-transparent-0: #DDD4;
+    --clr-light-transparent-1: #DDD7;
     --clr-text: aqua;
     --clr-red: #F44;
     --clr-yellow: yellow;
@@ -165,7 +166,7 @@ dialog {
     cursor: pointer;
     font-family: var(--font-2);
     color: var(--clr-light);
-    background-color: var(--clr-light-transparent);
+    background-color: var(--clr-light-transparent-0);
     height: calc(var(--v) * 3);
     margin: var(--v);
     padding: var(--v);
@@ -181,7 +182,7 @@ dialog {
 }
 
 .popup {
-    background-color: var(--clr-light-transparent);
+    background-color: var(--clr-light-transparent-0);
     color: var(--clr-light);
     position: absolute;
     z-index: 2;
@@ -238,4 +239,39 @@ path.highlightable:hover {
     right: calc(var(--v) * 3);
     background-color: #0000;
     border: none;
+}
+
+.save-to-homescreen {
+    transition:.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right:0;
+    bottom:10%;
+    background-color: var(--clr-light-transparent-1);
+    padding: calc(var(--v) * 2);
+    border-radius: calc(var(--v) * 3) 0 0 calc(var(--v) * 3);
+    transform:translate(100%, 0);
+}
+
+.save-to-homescreen > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0000;
+    border:none;
+    width:calc(var(--v) * 4);
+    margin-right: 2vw;
+}
+
+.save-to-homescreen > button > img {
+    aspect-ratio: 1 / 1;
+    width:100%;
+}
+
+.save-to-homescreen > label {
+    cursor: pointer;
+    color:#5C00A3;
+    font:bold calc(var(--v) * 2) var(--font-2);
 }
