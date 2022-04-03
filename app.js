@@ -31,15 +31,11 @@ document.querySelectorAll('.keyboard .key, .keyboard .large-key').forEach(key =>
 
 const addToHomescreen = document.querySelector('.save-to-homescreen');
 const addBtn = document.querySelector('.save-to-homescreen>button');
-addToHomescreen.style.display = 'none';
 
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     const deferredPrompt = e;
-    addToHomescreen.style.display = '';
     addToHomescreen.style.transform = 'none';
-
-    alert(addToHomescreen)
   
     addBtn.addEventListener('click', () => {
       addToHomescreen.style.transform = 'translate(100%, 0)';
