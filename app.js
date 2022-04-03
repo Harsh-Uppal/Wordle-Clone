@@ -33,25 +33,14 @@ const addBtn = document.querySelector('.save-to-homescreen>button');
 document.querySelector('.save-to-homescreen').style.transform = 'translate(100%, 0)';
 
 window.addEventListener('beforeinstallprompt', (e) => {
-    // Prevent Chrome 67 and earlier from automatically showing the prompt
     e.preventDefault();
-    // Stash the event so it can be triggered later.
     const deferredPrompt = e;
-    // Update UI to notify the user they can add to home screen
     document.querySelector('.save-to-homescreen').style.transform = 'none';
   
-    addBtn.addEventListener('click', (e) => {
-      // hide our user interface that shows our A2HS button
+    addBtn.addEventListener('click', () => {
       document.querySelector('.save-to-homescreen').style.transform = 'translate(100%, 0)';
-      // Show the prompt
       deferredPrompt.prompt();
-      // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
-          if (choiceResult.outcome === 'accepted') {
-            console.log('User accepted the A2HS prompt');
-          } else {
-            console.log('User dismissed the A2HS prompt');
-          }
+      deferredPrompt.userChoice.then(() => {
           deferredPrompt = null;
         });
     });
