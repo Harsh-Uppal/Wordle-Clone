@@ -29,13 +29,15 @@ document.querySelectorAll('.keyboard .key, .keyboard .large-key').forEach(key =>
     keyboardKeys[key.textContent] = key;
 });
 
+const addToHomescreen = document.querySelector('.save-to-homescreen');
 const addBtn = document.querySelector('.save-to-homescreen>button');
-document.querySelector('.save-to-homescreen').style.transform = 'translate(100%, 0)';
+addToHomescreen.style.display = 'none';
 
 window.addEventListener('beforeinstallprompt', (e) => {
     e.preventDefault();
     const deferredPrompt = e;
-    document.querySelector('.save-to-homescreen').style.transform = 'none';
+    addToHomescreen.style.display = '';
+    addToHomescreen.style.transform = 'none';
   
     addBtn.addEventListener('click', () => {
       document.querySelector('.save-to-homescreen').style.transform = 'translate(100%, 0)';
