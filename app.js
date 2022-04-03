@@ -40,7 +40,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     addToHomescreen.style.transform = 'none';
   
     addBtn.addEventListener('click', () => {
-      document.querySelector('.save-to-homescreen').style.transform = 'translate(100%, 0)';
+      addToHomescreen.style.transform = 'translate(100%, 0)';
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then(() => {
           deferredPrompt = null;
