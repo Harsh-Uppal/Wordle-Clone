@@ -32,19 +32,15 @@ document.querySelectorAll('.keyboard .key, .keyboard .large-key').forEach(key =>
 const addToHomescreen = document.querySelector('.save-to-homescreen');
 const addBtn = document.querySelector('.save-to-homescreen>button');
 
-window.addEventListener('beforeinstallprompt', (e) => {
+window.addEventListener('beforeinstallprompt', e => {
+    alert('something');
     e.preventDefault();
-    const deferredPrompt = e;
     addToHomescreen.style.transform = 'none';
   
     addBtn.addEventListener('click', () => {
-        alert('something');
       addToHomescreen.style.transform = 'translate(100%, 0)';
-      deferredPrompt.prompt();
+      e.prompt();
         alert(1);
-      deferredPrompt.userChoice.then(() => {
-          deferredPrompt = null;
-        });
     });
   });
 
