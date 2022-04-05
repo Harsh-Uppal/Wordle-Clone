@@ -35,6 +35,7 @@ const addBtn = document.querySelector('.save-to-homescreen>button');
 window.addEventListener('beforeinstallprompt', e => {
     alert('something');
     e.preventDefault();
+    addToHomescreen.style.display = '';
     addToHomescreen.style.transform = 'none';
   
     addBtn.addEventListener('click', () => {
