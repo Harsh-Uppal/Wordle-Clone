@@ -38,7 +38,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     addToHomescreen.style.transform = 'none';
   
     addBtn.addEventListener('click', () => {
-        alert(0);
+        alert('something');
       addToHomescreen.style.transform = 'translate(100%, 0)';
       deferredPrompt.prompt();
         alert(1);
