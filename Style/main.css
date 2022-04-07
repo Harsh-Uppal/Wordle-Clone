@@ -25,7 +25,7 @@ body {
 
 .titlebar>.btn-wrapper {
     position: absolute;
-    right: 2%;
+    right: min(5%, 2rem);
     display: flex;
     justify-content: space-evenly;
     height: calc(var(--v) * 4);
