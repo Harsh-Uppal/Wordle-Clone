@@ -1,0 +1,26 @@
+dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--clr-dark-0);
+    border: .5px solid var(--clr-light);
+}
+
+.winModal,
+.loseModal {
+    padding: calc(var(--v) * 4);
+    border-radius: calc(var(--v) * 3);
+}
+
+.winModal>.header,
+.loseModal>.header {
+    margin-bottom: 2vh;
+}
+
+.winModal>*,
+.loseModal>* {
+    font-family: var(--font-1);
+    text-align: center;
+    color: var(--clr-light);
+}

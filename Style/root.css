@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&family=Pacifico&family=Poiret+One&display=swap');
+
+:root {
+    --font-0: 'Poiret One', sans-serif;
+    --font-1: 'Pacifico', sans-serif;
+    --font-2: 'Nunito', sans-serif;
+    --clr-dark-0: #333;
+    --clr-dark-1: #222;
+    --clr-light: #DDD;
+    --clr-light-transparent-0: #DDD4;
+    --clr-light-transparent-1: #DDD7;
+    --clr-text: aqua;
+    --clr-red: #F44;
+    --clr-yellow: yellow;
+    --v: calc((1vw + 1vh) / 2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.header {
+    color: var(--clr-light);
+    font-family: var(--font-0) !important;
+    font-size: calc(var(--v) * 4);
+}

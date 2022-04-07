@@ -1,0 +1,27 @@
+.keyboard>.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.keyboard>.row>.key,
+.keyboard>.row>.large-key {
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+    font-family: var(--font-2);
+    color: var(--clr-light);
+    background-color: var(--clr-light-transparent-0);
+    height: calc(var(--v) * 3);
+    margin: var(--v);
+    padding: var(--v);
+    border-radius: var(--v);
+}
+
+.keyboard>.row>.key {
+    width: 3vw;
+}
+
+.keyboard>.row>.large-key {
+    width: 6vw;
+}

@@ -41,7 +41,6 @@ window.addEventListener('beforeinstallprompt', e => {
     addBtn.addEventListener('click', () => {
       addToHomescreen.style.transform = 'translate(100%, 0)';
       e.prompt();
-        alert(1);
     });
   });
 
