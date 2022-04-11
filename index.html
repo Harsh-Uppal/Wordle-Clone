@@ -80,12 +80,12 @@
         <div class="header">You Win!</div>
         <div>Word: <span id="solution"></span></div>
         <div>Attempts: <span id="attemptCount"></span></div>
-        <button class="close-btn" onclick="closeModal()">Play Again</button>
+        <button class="close-btn" onclick="closeModal('.winModal')">Play Again</button>
     </dialog>
     <dialog class="loseModal">
         <div class="header">Game Over!</div>
         <div>Correct Word: <span id="solution"></span></div>
-        <button class="close-btn" onclick="closeModal()">Play Again</button>
+        <button class="close-btn" onclick="closeModal('.loseModal')">Play Again</button>
     </dialog>
     <dialog class="stats">
         <div class="header">Statistics</div>

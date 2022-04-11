@@ -33,7 +33,6 @@ const addToHomescreen = document.querySelector('.save-to-homescreen');
 const addBtn = document.querySelector('.save-to-homescreen>button');
 
 window.addEventListener('beforeinstallprompt', e => {
-    alert('something');
     e.preventDefault();
     addToHomescreen.style.display = '';
     addToHomescreen.style.transform = 'none';
@@ -42,7 +41,7 @@ window.addEventListener('beforeinstallprompt', e => {
       addToHomescreen.style.transform = 'translate(100%, 0)';
       e.prompt();
     });
-  });
+});
 
 function keyPressed({ keyCode, key }) {
     if (keyCode == 13 && c > cols - 1)
@@ -122,24 +121,6 @@ function lose() {
     document.querySelector('.loseModal #solution').textContent = solution;
 }
 
-function closeModal() {
-    (won ? winScreen : loseScreen).close();
-
-    solution = randomWord();
-
-    for (let r = 0; r < rows; r++)
-        for (let c = 0; c < cols; c++) {
-            grid[r][c].textContent = '';
-            grid[r][c].style.backgroundColor = '';
-        }
-
-    r = c = 0;
-
-    //Resetting keyboard keys
-    for (const key in keyboardKeys)
-        keyboardKeys[key].style.backgroundColor = '';
-}
-
 function showPopup(text) {
     const popup = document.querySelector('.popup');
     popup.textContent = text;
@@ -205,6 +186,19 @@ function share() {
 
 function closeModal(selector) {
     document.querySelector(selector).close();
+    solution = randomWord();
+
+    for (let r = 0; r < rows; r++)
+        for (let c = 0; c < cols; c++) {
+            grid[r][c].textContent = '';
+            grid[r][c].style.backgroundColor = '';
+        }
+
+    r = c = 0;
+
+    //Resetting keyboard keys
+    for (const key in keyboardKeys)
+        keyboardKeys[key].style.backgroundColor = '';
 }
 
 function help() {
